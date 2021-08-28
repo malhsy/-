@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="windows-1256" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="Author" content="Ringroad" />
+ <meta name="theme-color" content="#9831e0" />
+ <meta name="msapplication-navbutton-color" content="#9831e0" />
+ <meta name="apple-mobile-web-app-status-bar-style" content="#9831e0" />
+ <meta name="apple-mobile-web-app-capable" content="yes" />
+ <link rel="icon" href="img/favicon.png" />
+ <title>Gratis 5 Menit</title>
+ <link rel="stylesheet" href="css/fontawesome.min.css" />
+ <link rel="stylesheet" href="css/style.css" />
+ <script type="text/javascript" src="js/jquery.js"></script>
+ <style>
+.fade-in{-webkit-animation:fade-in 2s ease;-moz-animation:fade-in ease-in-out 2s both;-ms-animation:fade-in ease-in-out 2s both;-o-animation:fade-in ease-in-out 2s both;animation:fade-in 2s ease;visibility:visible;-webkit-backface-visibility:hidden}@-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@-moz-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@-o-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}.master-circle{display:inline-flex;width:50px;height:50px}.circle{display:inline-flex;position:absolute;justify-content:center;align-items:center;border:5px solid red;height:50px;width:50px;border-radius:50px;transform:rotateY(180deg);animation-name:clipCircle;animation-duration:10s;animation-iteration-count:infinite;animation-timing-function:cubic-bezier(0,0,1,1);animation-direction:reverse}@keyframes clipCircle{0%{clip-path:polygon(50% 50%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%)}12.5%{clip-path:polygon(50% 50%,50% 0%,0% 0%,0% 0%,0% 0%,0% 0%,0% 0%,0% 0%,0% 0%,0% 0%)}25%{clip-path:polygon(50% 50%,50% 0%,0% 0%,0% 50%,0% 50%,0% 50%,0% 50%,0% 50%,0% 50%,0% 50%)}37.5%{clip-path:polygon(50% 50%,50% 0%,0% 0%,0% 50%,0% 100%,0% 100%,0% 100%,0% 100%,0% 100%,0% 100%)}50%{clip-path:polygon(50% 50%,50% 0%,0% 0%,0% 50%,0% 100%,50% 100%,50% 100%,50% 100%,50% 100%,50% 100%)}62.5%{clip-path:polygon(50% 50%,50% 0%,0% 0%,0% 50%,0% 100%,50% 100%,100% 100%,100% 100%,100% 100%,100% 100%)}75%{clip-path:polygon(50% 50%,50% 0%,0% 0%,0% 50%,0% 100%,50% 100%,100% 100%,100% 50%,100% 50%,100% 50%)}87.5%{clip-path:polygon(50% 50%,50% 0%,0% 0%,0% 50%,0% 100%,50% 100%,100% 100%,100% 50%,100% 0%,100% 0%)}100%{clip-path:polygon(50% 50%,50% 0%,0% 0%,0% 50%,0% 100%,50% 100%,100% 100%,100% 50%,100% 0%,50% 0%)}}.seconds{color:#000;position:absolute;display:inline-flex;height:50px;width:50px;justify-content:center;align-items:center;font-size:15px}
+ </style>
+</head>
+
+<body>
+<div class="app-container">
+ <div class="page page-home page-with-subnavbar">
+  <div class="page">
+   <div class="navbar navbar-page">
+    <div class="navbar-inner sliding">
+     <div class="left">
+      <a href="#" class="link back" onclick="javascript:history.go(-1);return false;">
+       <i class="fa fa-chevron-left"></i>
+      </a>
+     </div>
+     <div class="title">
+      Login Gratis
+     </div>
+    </div>
+   </div>
+   <div class="page-content">
+    <!-- trial user -->
+    <div class="container margin-pages margin-bottom-big">
+     <div class="background-white padding-box border-radius box-shadow text-center">
+      <h6 id="trial-login">
+       Harap tunggu <br />
+       <div class="master-circle">
+        <div class="circle"></div>
+        <div class="seconds"></div>
+       </div>
+       <br />
+      </h6>
+      <div id="banner-load"></div>
+      $(if trial == 'yes')
+      <h6 id="counter-trial" style="display: none;">
+       Klik Tombol di Bawah Untuk Melanjutkan.<br />
+       <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"><button class="buttons buttons-full">Gratis 5 Menit</button></a>
+      </h6>
+      $(else)
+      <h6 id="counter-trial" style="display: none;">
+       Maaf, Trial hari ini sudah habis.<br />
+       <a href="login.html"><button class="buttons buttons-full">Kembali</button></a>
+      </h6>
+      $(endif)
+     </div>
+     <div class="separator"></div>
+    </div>
+    <!-- end trial user -->
+   </div>
+  </div>
+ </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+var images = ['iklan1.jpg', 'iklan2.jpg'];
+    $('<img class="fade-in img-responsive border-radius" src="img/' + images[Math.floor(Math.random() * images.length)] + '">').appendTo('#banner-load');
+});
+
+let secondsCountdown = 10;
+
+const seconds = document.getElementsByClassName("seconds");
+
+seconds[0].innerHTML = `<span>${secondsCountdown}</span>`;
+
+function countdown() {
+  secondsCountdown -= 1;
+  if (secondsCountdown < 0) {
+document.getElementById("trial-login").style = 'display:none';
+document.getElementById("counter-trial").style = 'display:block';
+  } else {
+    seconds[0].innerHTML = `<span>${secondsCountdown}</span>`;
+    window.setTimeout("countdown()", 1000);
+  }
+}
+countdown();
+</script>
+<!-- end script -->
+</body>
+</html>

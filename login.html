@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="windows-1256">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="Author" content="Ringroad">
+		<meta name="theme-color" content="#9831e0">
+		<meta name="msapplication-navbutton-color" content="#9831e0">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#9831e0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="icon" href="img/favicon.png">
+		<title>شبكة أنترنت أبو عوض</title>
+		<link rel="stylesheet" href="css/fontawesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/custom.js"></script>
+	</head>
+<body>
+<div class="app-container">
+<div class="page page-home page-with-subnavbar">
+<div class="toolbar tabbar tabbar-labels toolbar-bottom">
+ <div class="toolbar-inner">
+  <a href="/" class="tab-link tab-link-active">
+   <i class="fa fa-home"></i>
+   <p>الرئسية</p>
+  </a>
+  <a href="fitur.html" class="tab-link">
+    <i class="fa fa-list-alt"></i>
+    <p><b>نبذه</b></p>
+  </a>
+  <a href="paket.html" class="tab-link">
+    <i class="fa fa-list"></i>
+    <p>البطاقات</p>
+  </a>
+    <a href="aktivasi.html" class="tab-link">
+     <i class="fa fa-shield"></i>
+     <p>شرح التسجيل</p>
+    </a>
+  <a href="about.html" class="tab-link">
+    <i class="fa fa-user"></i>
+    <p>الاتصال</p>
+  </a>
+  </a>
+ </div>
+</div>
+<div class="tabs-animated-wrap">
+<div class="tabs" >
+<div id="tab-1" class="tab tab-active page-content">
+<header class="background-primer">
+ <h1 class="color-white margin-left-small">أبوعوض لخدمات الانترنت</h1>
+ <div class="header-right">
+<ul class="links">
+ <li class="rad-dropdown">
+  <a class="rad-menu-item" href="#">
+   <i class="fa fa-bell-o"><span class="rad-menu-badge">1</span></i>
+  </a>
+<ul class="rad-dropmenu-item">
+<li class="rad-dropmenu-header"><b>حالة الشبكة</b></li>
+<li class="rad-notification-item text-center">
+<div id="statusServer"></div>
+</li>
+</ul>
+ </li>
+</ul>
+ </div>
+</header>
+<!-- slider -->
+<div class="border-radius-style background-slider background-primer">
+ <div class="container">
+  <div class="background-white border-radius padding-box-small box-shadow">
+   <div class="row row-no-margin-bottom">
+    <div id="slider" class="slider border-radius">
+     <ul class="slides-wrapper">
+      <li>
+       <img src="img/banner1.jpg" alt="img1" width="84%" height="84%" /> 
+      </li>
+      <li>
+       <img src="img/banner2.jpg" alt="img2" />
+      </li>
+      <li>
+       <img src="img/banner3.jpg" alt="img3" />
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="separator-small"></div>
+<div class="login">
+ <div class="container">
+  <h6 class="margin-bottom-small text-center">
+			<font face="Cairo-Regular" size="3" color="#800080">
+			<marquee style="font-weight:bold;border-top:2px dashed #fff;" direction="right">نقاط بيع بطاقات أبو عوض / دكان عوض عيد الهسي - دكان شوقى عيد الهسي- بسطه حمزه سعد الله - بسطه سائد سعد الله - دكان محمد الصلفوح الهسي- دكان احسين عبدالله الهسي - دكان ام رمضان سعود - دكان جاسر سعود - دكان سعيد الادهم - دكان تيسير منير الهسي - دكان وهيب سعد الله -دكان رامى ديب الهسي - دكان ام موسي القرعاوى - بسطه منصور القرعاوى - ابو فاروق الهسي-( نحن بخدمتكم على مدار الساعه ) لاستقبال شكاويكم على الرقم 0599845582</marquee></font><font size="3">ادخل رقم 
+			</font> <span class="color-primer">
+			<font size="3">عضويتك هنا</font> </span></h6>
+  <div class="background-white border-radius padding-box-small box-shadow">
+   <div class="row row-no-margin-bottom">
+	<form id="loginvcr" name="loginvcr" action="$(link-login-only)" method="post" autocomplete="off"
+		$(if chap-id) onSubmit="return doLoginVCR()" $(endif)>
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+		<input type="text" name="username" placeholder="ضع رقم البطاقه هنا" id="uservcr" required>
+		<input type="hidden" name="password" id="passvcr">
+		<button type="submit" class="buttons buttons-small">دخول</button>
+	</form>   
+   </div>
+  </div>
+  $(if error)
+  <div id="infoError" class="infoError">
+   <script type="text/javascript">
+    var error = "$(error)";
+    var error1 = "user $(username) وصلت إلى حد الجهوزية";
+    var error2 = "user $(username) has reached traffic limit";
+    var error3 = "no valid profile found";
+    var error4 = "خطأ في اسم المستخدم أو كلمة مرور";
+    var error5 = "user &lt;$(username)&gt; not found";
+    var error6 = "تم الوصول إلى الحد الأقصى للجلسة المتزامنة";
+	var error7 = "لا يسمح بالمزيد من الجلسات للمستخدمين $(username)"
+    if (error == error1 || error == error2 || error == error3) {
+     document.getElementById("infoError").innerHTML = '<i class="fa fa-info-circle"></i> انتهت صلاحية بطاقتك النشطة';
+    } else if (error == error4) {
+     document.getElementById("infoError").innerHTML = '<i class="fa fa-info-circle"></i> العضو أو البطاقة خاطئة أو غير مسجلة على الخادم الخاص بنا';
+    } else if (error == error5) {
+     document.getElementById("infoError").innerHTML = '<i class="fa fa-info-circle"></i> العضو أو رقم البطاقة غير موجودة';
+    } else if (error == error6) {
+     document.getElementById("infoError").innerHTML = '<i class="fa fa-info-circle"></i> تم تقييد عدد جلسات تسجيل الدخول';
+    } else if (error == error7) {
+     document.getElementById("infoError").innerHTML = '<i class="fa fa-info-circle"></i> يتم استخدام العضو أو البطاقة على جهاز آخر';
+    } else {
+     document.getElementById("infoError").innerHTML = '<i class="fa fa-info-circle"></i> $(error)';
+    }
+   </script>
+  </div>
+  $(endif)
+ </div>
+</div>
+<div class="separator-small"></div>
+<div class="menus">
+ <div class="container">
+  <div class="row">
+   <div class="col">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-lime"><i class="fa fa-unlock"></i></span>
+      <h6 class="font-weight-500"><a href="voucher.html">نقاط البيع</a></h6>
+     </div>
+   </div>
+   <div class="col">
+    <a href="paket.html">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-orange"><i class="fa fa-ticket"></i></span>
+      <h6 class="font-weight-500">البطاقات</h6>
+     </div>
+    </a>
+   </div>
+   <div class="col">
+    <a href="member.html">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-purple"><i class="fa fa-users"></i></span>
+      <h6 class="font-weight-500">الاعضاء</h6>
+     </div>
+    </a>
+   </div>
+  </div>
+  <div class="row">
+   <div class="col">
+    <a href="https://laksa19.github.io/myqr">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-teal"><i class="fa fa-qrcode"></i></span>
+      <h6 class="font-weight-500">صور الكرت</h6>
+     </div>
+    </a>
+   </div>
+   <div class="col">
+    <a href="faq.html">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-yellow"><i class="fa fa-question-circle"></i></span>
+      <h6 class="font-weight-500">المعلومات</h6>
+     </div>
+    </a>
+   </div>
+   <div class="col">
+    <a href="kontak.html">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-lime"><i class="fa fa-envelope-o"></i></span>
+      <h6 class="font-weight-500">الاتصال بنا</h6>
+     </div>
+    </a>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="separator-small"></div>
+<div class="container margin-bottom-big">
+ <div class="background-white border-radius box-shadow padding-box-middle text-center">
+  <div class="rq0escxv l9j0dhe7 du4w35lb j83agx80 cbu4d94t pfnyh3mw d2edcug0 bp9cbjyn jb3vyjys" style="align-items: center; flex-direction: column; max-width: 100%; z-index: 0; display: flex; padding-top: 0px; position: relative; flex-shrink: 0; box-sizing: border-box; font-family: &quot;Segoe UI Historic&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif; color: rgb(28, 30, 33); font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+	<div class="j83agx80 cbu4d94t obtkqiv7 sv5sfqaa" style="flex-direction: column; display: flex; margin-bottom: -8px; margin-top: -8px; font-family: inherit;">
+		<div class="bi6gxh9e aov4n071" style="margin-top: -8px; margin-bottom: -10px; font-family: inherit;">
+			<img border="0" src="img/1.gif" style="width: 96%; height: 43%" width="503" height="98"></div>
+	</div>
+	</div>
+ </div>
+</div>
+<div class="separator">&nbsp;</div>
+<div class="separator-bottom"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+$(if chap-id) 
+<form name="sendin" action="$(link-login-only)" method="post">
+	<input type="hidden" name="username" />
+	<input type="hidden" name="password" />
+	<input type="hidden" name="dst" value="$(link-orig)" />
+	<input type="hidden" name="popup" value="true" />
+</form>
+<script type="text/javascript" src="md5.js"></script>
+<script type="text/javascript">
+// Login Voucher
+function doLoginVCR() {
+	document.sendin.username.value = document.loginvcr.username.value;
+	document.sendin.password.value = hexMD5('$(chap-id)' + document.loginvcr.username.value + '$(chap-challenge)');
+	document.sendin.submit();
+	return false;
+}
+</script>
+$(endif)
+<script>
+var host = window.location.hostname;
+document.title = "Login Hotspot - " + host;
+function kodevoucher() {
+    var uservalue = document.getElementById("uservcr").value; // .toLowerCase(); // .toUpperCase();
+    document.getElementById("uservcr").value = uservalue;
+}
+document.getElementById("uservcr").focus();
+document.getElementById("uservcr").onkeyup = kodevoucher;
+</script>
+<!-- end script -->
+<script>
+$(document).ready(function() {
+	window.setTimeout(function() {
+		$(".infoError").fadeTo(1000, 0).slideUp(1000, function() {
+			$(this).remove();
+		});
+	}, 10000);
+});
+</script>
+<script>
+// Status server
+var img = new Image();
+img.onload = function(){
+	document.getElementById("statusServer").innerHTML = '<i class="fa fa-circle online"></i> الانترنت متصل!';
+};
+img.onerror = function() {
+	var offln = document.querySelector('.rad-dropmenu-item');
+	offln.classList.add('active');
+	document.getElementById("statusServer").innerHTML = '<i class="fa fa-circle offline"></i> ليس متصل! ';
+};
+// Cek status koneksi
+img.src = 'https://laksa19.github.io/img/voucher/cbp.png';
+</script>
+<script>
+var addActive = function(e){
+  e.stopPropagation();
+  $(".rad-dropmenu-item").toggleClass("active");
+};
+var removeActive = function(){
+    $('.rad-dropmenu-item.active').removeClass('active');
+};
+$(document).ready(function() {
+  $('li.rad-dropdown > a.rad-menu-item').on('click',addActive);
+  $('body').on('click',removeActive);
+});
+</script>
+</body>
+</html>

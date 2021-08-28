@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="windows-1256" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="Author" content="Ringroad" />
+ <meta name="theme-color" content="#9831e0" />
+ <meta name="msapplication-navbutton-color" content="#9831e0" />
+ <meta name="apple-mobile-web-app-status-bar-style" content="#9831e0" />
+ <meta name="apple-mobile-web-app-capable" content="yes" />
+ <link rel="icon" href="img/favicon.png" />
+ <title>الخروج من نقطة الاتصال</title>
+ <link rel="stylesheet" href="css/fontawesome.min.css" />
+ <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<script language="JavaScript">
+    function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+	open('$(link-login)', '_blank', '');
+	window.close();
+	return false;
+    }
+</script>
+<div class="app-container">
+ <div class="page page-home page-with-subnavbar">
+  <div class="page">
+   <div class="page-content">
+    <!-- login member -->
+    <div class="login-member">
+     <div class="link-closess">
+      <a href="login.html" class="link back float-right">
+       <i class="fa fa-times"></i>
+      </a>
+     </div>
+     <div class="container">
+      <h1 class="color-primer text-center">شكرا لك !</h1>
+      <div class="main-content">
+       <p class="main-content__body">لقد استخدمت خدمة الإنترنت لدينا.</p>
+       <i class="fa fa-check main-content__checkmark" id="checkmark"></i>
+       <p class="main-content__body">
+        لقد خرجت من  شبكتنا. الرجاء النقر فوق الزر أدناه لإعادة الاتصال.
+       </p>
+       <div class="separator-small"></div>
+       <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+        <button class="buttons buttons-center buttons-full box-shadow"><i class="fa fa-arrow-circle-left"></i> تسجيل الدخول</button>
+       </form>
+      </div>
+      <div class="separator"></div>
+     </div>
+     <div class="separator-small"></div>
+     <!-- follow us -->
+     <div class="container margin-bottom">
+      <div class="text-center">
+       <h5 class="margin-bottom-small">اتبعنا: :</h5>
+       <ul>
+        <li>
+          <span class="icon-small icon-width socmed-bg-facebook color-white">
+           <i class="fa fa-facebook-f"></i>
+          </span>
+        </li>
+        <li>
+          <span class="icon-small icon-width socmed-bg-twitter color-white">
+           <i class="fa fa-twitter"></i>
+          </span>
+        </li>
+        <li>
+          <span class="icon-small icon-width socmed-bg-whatsapp color-white">
+           <i class="fa fa-whatsapp"></i>
+          </span>
+        </li>
+        <li>
+          <span class="icon-small icon-width socmed-bg-google color-white">
+           <i class="fa fa-google"></i>
+          </span>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="windows-1256">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="Author" content="Ringroad">
+		<!-- Untuk Chrome & Opera -->
+		<meta name="theme-color" content="#9831e0">
+		<!-- Untuk Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#9831e0">
+		<!-- Untuk Safari iOS -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="#9831e0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="icon" href="img/favicon.png">
+		<title>دخول الاشتراكات</title>
+		<link rel="stylesheet" href="css/fontawesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/jquery.js"></script>
+<style>
+input[type=password],
+input[type=text] {
+margin-bottom: 13px !important;
+}
+</style>
+	</head>
+<body>
+<div class="app-container">
+ <div class="page page-home page-with-subnavbar">
+<div class="page">
+	<div class="page-content">
+		<!-- login member -->
+		<div class="login-member">
+			<div class="link-closess">
+				<a href="#" onclick="javascript:history.go(-1);return false;" class="link back float-right">
+					<i class="fa fa-times"></i>
+				</a>
+			</div>
+			<div class="container">
+				<h1 class="color-primer text-center">دخول الاشتركات المنزليه </h1>
+				<div class="separator"></div>
+				
+	<form id="loginuspw" name="loginuspw" action="$(link-login-only)" method="post" autocomplete="off"
+		$(if chap-id) onSubmit="return doLoginUSPW()" $(endif)>
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+		<input type="text" name="username" placeholder="Username" id="username" required>
+		<input type="password" name="password" placeholder="Password" id="password" required>
+		<p class="text-center margin-bottom-middle">هل لديك اشتراك بالفعل؟ <a class="color-primer" href="login.html">دخول بطاقه</a></p>
+		<button type="submit" class="buttons buttons-center buttons-full box-shadow">دخول</button>		
+	</form>				
+
+			</div>
+			<div class="separator-small"></div>
+			<!-- follow us -->
+			<div class="container margin-bottom">
+				<div class="text-center">
+					<h5 class="margin-bottom-small">تبعنا :</h5>
+					<ul>
+						<li>
+							<span class="icon-small icon-width socmed-bg-facebook color-white">
+								<i class="fa fa-facebook-f"></i>
+							</span>
+						</li>
+						<li>
+							<span class="icon-small icon-width socmed-bg-twitter color-white">
+								<i class="fa fa-twitter"></i>
+							</span>
+						</li>
+						<li>
+							<span class="icon-small icon-width socmed-bg-whatsapp color-white">
+								<i class="fa fa-whatsapp"></i>
+							</span>
+						</li>
+						<li>
+							<span class="icon-small icon-width socmed-bg-google color-white">
+								<i class="fa fa-google"></i>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- end follow us -->
+			
+		</div>
+		<!-- end login member -->
+	</div>
+</div>
+ </div>
+</div>
+$(if chap-id) 
+<form name="sendin" action="$(link-login-only)" method="post">
+	<input type="hidden" name="username" />
+	<input type="hidden" name="password" />
+	<input type="hidden" name="dst" value="$(link-orig)" />
+	<input type="hidden" name="popup" value="true" />
+</form>
+<script type="text/javascript" src="md5.js"></script>
+<script type="text/javascript">
+// Login Member
+function doLoginUSPW() {
+	document.sendin.username.value = document.loginuspw.username.value;
+	document.sendin.password.value = hexMD5('$(chap-id)' + document.loginuspw.password.value + '$(chap-challenge)');
+	document.sendin.submit();
+	return false;
+}
+</script>
+$(endif)
+<script type="text/javascript">
+
+</script>
+<!-- end script -->
+</body>
+</html>

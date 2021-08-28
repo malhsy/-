@@ -1,0 +1,16 @@
+﻿internal-error = internal error ($(error-orig))
+config-error = configuration error ($(error-orig))
+not-logged-in = برجاء تسجيل الدخول (ip $(ip))
+ippool-empty = لا يوجد ايبيهات فارغة POOL , برجاء المحاولة مرة أخرى
+shutting-down = الخدمة متوقفة مؤقتآ, برجاء المحاولة مرة أخرى.
+user-session-limit = غير مسموح بتسجيل الدخول اكثر من مرة $(username)
+license-session-limit = انتهت البطاقة برجاء المحاولة ببطاقة جديدة ($(error-orig))
+wrong-mac-username = اسم مستخدم غير صالح ($(username)): و الماك ادريس غير مطابق
+chap-missing = برجاء تحديث الصفحة لتسجيل الدخول
+invalid-username = خطأ في اسم المستخدم.
+invalid-mac = غير مسموح له بالدخول من جهاز تانى $(username) المستخدم
+uptime-limit = انتهى وقت البطاقة $(username) 
+traffic-limit = انتهت التحميل الدي ححده الك البطاقة $(username)
+radius-timeout = هنالك مشكلة في الريديس, برجاء المحاولة لاحقا
+auth-in-progress = جاري تسجيل الدخول, إنتظر
+radius-reply = $(error-orig)

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="windows-1256" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="Author" content="Ringroad" />
+ <meta name="theme-color" content="#9831e0" />
+ <meta name="msapplication-navbutton-color" content="#9831e0" />
+ <meta name="apple-mobile-web-app-status-bar-style" content="#9831e0" />
+ <meta name="apple-mobile-web-app-capable" content="yes" />
+ <link rel="icon" href="img/favicon.png" />
+ <title>حالة الاتصال </title>
+ $(if refresh-timeout)
+ <meta http-equiv="refresh" content="$(refresh-timeout-secs)" />
+ $(endif)
+ <link rel="stylesheet" href="css/fontawesome.min.css" />
+ <link rel="stylesheet" href="css/style.css" />
+ <script type="text/javascript" src="js/jquery.js"></script>
+ <script language="JavaScript">
+      function openLogout() {
+  	if (window.name != 'hotspot_status') return true;
+          open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+  	window.close();
+  	return false;
+      }
+ </script>
+</head>
+
+<body>
+<div class="app-container">
+<div class="page page-home page-with-subnavbar">
+<div class="tabs-animated-wrap">
+<div class="tabs" >
+<div id="tab-1" class="tab tab-active page-content">
+<header class="background-primer">
+ <h1 class="color-white" id="WelcomeMessage"></h1>
+ <div class="header-right">
+<ul class="links">
+ <li class="rad-dropdown">
+  <a class="rad-menu-item" href="#">
+   <i class="fa fa-bell-o"><span class="rad-menu-badge">1</span></i>
+  </a>
+<ul class="rad-dropmenu-item">
+<li class="rad-dropmenu-header"><b>حالة الشبكة</b></li>
+<li class="rad-notification-item text-center">
+<div id="statusServer"></div>
+</li>
+</ul>
+ </li>
+</ul>
+ </div>
+</header>
+     <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+      <input type="hidden" name="erase-cookie" value="on" />
+	  <div class="border-radius-style background-circle background-primer">
+ <div class="container">
+  <div class="background-white border-radius padding-box-middle box-shadow">
+   <div class="row row-no-margin-bottom">
+    <div class="col-60">
+     <div class="float-left margin-right-small">
+      <img class="people" src="img/author.jpg" alt="" />
+     </div>
+     <div class="overflow-hidden">
+      <h6>اسم المستخدم::</h6>
+	  <p id="user">$(username)</p>
+     </div>
+    </div>
+    <div class="col-40">
+      $(if login-by-mac != 'yes')
+      <button type="submit" class="buttons float-right letter-spacing margin-top-small background-red">خروج</button>
+      $(endif)
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+</form>
+<div class="separator"></div>
+<div class="menus">
+ <div class="container">
+  <div class="row">
+   <div class="col">
+    <a href="#" onclick="document.getElementById('Status').style.display='block'" style="width: auto;">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-green"><i class="fa fa-bar-chart"></i></span>
+      <h6 class="font-weight-500">حالة الاتصال</h6>
+     </div>
+    </a>
+   </div>
+   <div class="col">
+    <a href="masa-aktif.html">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-purple"><i class="fa fa-mobile"></i></span>
+      <h6 class="font-weight-500">الفتره النشطه</h6>
+     </div>
+    </a>
+   </div>
+   <div class="col">
+    <a href="paket.html">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-orange"><i class="fa fa-ticket"></i></span>
+      <h6 class="font-weight-500">بطاقات متميزه</h6>
+     </div>
+    </a>
+   </div>
+  </div>
+  <div class="row">
+   <div class="col">
+    <a href="">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-teal"><i class="fa fa-comments"></i></span>
+      <h6 class="font-weight-500">دردشة مباشره</h6>
+     </div>
+    </a>
+   </div>
+   <div class="col">
+    <a href="faq.html">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-yellow"><i class="fa fa-question-circle"></i></span>
+      <h6 class="font-weight-500">معلومات</h6>
+     </div>
+    </a>
+   </div>
+   <div class="col">
+    <a href="kontak.html">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-lime"><i class="fa fa-envelope-o"></i></span>
+      <h6 class="font-weight-500">اتصال بنا</h6>
+     </div>
+    </a>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="separator"></div>
+<div class="container">
+ <div class="background-white border-radius box-shadow padding-box-middle text-center">
+  <h4 class="margin-bottom-small"><font color="#FF0000"><span lang="ar-sa">(</span></font><font color="#800080"><a href="https://www.facebook.com/profile.php?id=100014228132433"><font color="#800080">FACEBOOK</font></a></font><font color="#FF0000"><span lang="ar-sa">)</span>
+	</font></h4>
+  <ul>
+   <li>
+     <span class="icon-small icon-width socmed-bg-facebook color-white">
+      <i class="fa fa-facebook"></i>
+     </span>
+   </li>
+   <li>
+     <span class="icon-small icon-width socmed-bg-twitter color-white">
+      <i class="fa fa-twitter"></i>
+     </span>
+   </li>
+   <li>
+     <span class="icon-small icon-width socmed-bg-whatsapp color-white">
+      <i class="fa fa-whatsapp"></i>
+     </span>
+   </li>
+   <li><span class="icon-small icon-width socmed-bg-google color-white">
+	<i class="fa fa-google"></i></span></li>
+  </ul>
+	<p>&nbsp;</p>
+	<ul>
+   <li><font color="#DC143C" size="2"><b><span lang="ar-sa">
+	<a href="https://www.google.com/?hl=ar"><font color="#DC143C">GOOGLE.COM 
+	</font></a></span></b></font></li>
+  </ul>
+ </div>
+</div>
+<div class="separator-bottom"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="Status" class" class="modal fade">
+<div class="modal-content">
+<div class="background-white padding-box border-radius box-shadow text-center">
+	<h6 class="margin-bottom-small">حالة الاتصال</h6>
+<table class="table2">
+	<tr><td class="pdd-small"><i class="fa fa-sitemap"></i> </td><td style="width:25%;">IP </td><td class="pddr-small" align="right">$(ip)</td></tr>
+    <tr><td class="pdd-small"><i class="fa fa-laptop"></i> </td><td>MAC </td><td class="pddr-small" align="right">$(mac)</td></tr>
+    <tr><td class="pdd-small"><i class="fa fa-sort"></i></td><td>Up/Down </td><td style="padding-right: 10px;" align="right">$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+$(if remain-bytes-total)
+    <tr><td class="pdd-small"><i class="fa fa-battery-half"></i> </td><td>حصة نسبية </td><td class="pddr-small" align="right">$(remain-bytes-total-nice)</td></tr>
+$(endif)
+$(if blocked == 'yes')
+	<tr><td align="left">Stat</td><td><div style="color: #FF8080">
+<a href="$(link-advert)" target="hotspot_advert">الإعلانات</a> مطلوب</div></td><td></td></tr>
+$(elif refresh-timeout)
+	<tr><td class="pdd-small"><i class="fa fa-refresh"></i> </td><td>تحديث </td><td class="pddr-small" align="right">$(refresh-timeout)</td></tr>
+$(endif)
+$(if session-time-left)
+    <tr><td class="pdd-small"><i class="fa fa-clock-o"></i> </td><td>زمن </td><td class="pddr-small" align="right"><span id="SisaWaktu"></span></td></tr>
+$(endif)
+$(if session-time-left)
+<!-- Bila Pakai Mikhmon online -->
+<tr><td class="pdd-small"><i class="fa fa-hourglass-half"></i> </td><td>منتهي الصلاحية </td><td align="right"><iframe id="exp" frameborder="0" scrolling="no" src="about:blank"></iframe></td></tr>
+$(else)
+<tr><td class="pdd-small"><i class="fa fa-hourglass-half"></i> </td><td>منتهي الصلاحية</td><td align="right">Unlimited</td></tr>
+$(endif)
+</table>
+	<div class="separator-small"></div>
+	<button class="buttons buttons-full margin-top-small box-shadow" onclick="document.getElementById('Status').style.display='none'">تمام</button>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+//get validity
+var usr = document.getElementById('user').innerHTML
+var url = "http://192.168.50.254/status/status.php?name="; // http://ip-server-mikhmon/mikhmonv2/status/status.php?name=
+var SessionName = "WORKHOME"
+var getvalid = url+usr+"&session="+SessionName
+document.getElementById('exp').src = getvalid;
+</script>
+<script>
+var time="$(session-time-left)";time=time.replace(/w/g,"w ").replace(/d/g,"d ").replace(/h/g,"h ").replace(/m/g,"m ").replace(/s/g,"s "),waktu=time.replace(/w /g,"Minggu").replace(/d /g,"Hari").replace(/h /g,"Jam").replace(/m /g,"Menit").replace(/s /g,"Detik"),sisawaktu=waktu.replace(/Minggu/g,"Minggu ").replace(/Hari/g,"Hari ").replace(/Jam/g,"Jam ").replace(/Menit/g,"Menit ").replace(/Detik/g,"Detik "),document.getElementById("SisaWaktu").innerHTML=sisawaktu;
+</script>
+<script>
+// Status server
+var img = new Image();
+img.onload = function(){
+	document.getElementById("statusServer").innerHTML = '<i class="fa fa-circle online"></i> الانترنت متصل!';
+};
+img.onerror = function() {
+	var offln = document.querySelector('.rad-dropmenu-item');
+	offln.classList.add('active');
+	document.getElementById("statusServer").innerHTML = '<i class="fa fa-circle offline"></i>  متصل :(!';
+};
+// Cek status koneksi
+img.src = 'http://ringroad.net/error-image.png';
+</script>
+<script>
+var addActive = function(e){
+  e.stopPropagation();
+  $(".rad-dropmenu-item").toggleClass("active");
+};
+var removeActive = function(){
+    $('.rad-dropmenu-item.active').removeClass('active');
+};
+$(document).ready(function() {
+  $('li.rad-dropdown > a.rad-menu-item').on('click',addActive);
+  $('body').on('click',removeActive);
+});
+</script>
+<script type="text/javascript">
+var Messages = new Date,
+    Jams = Messages.getHours();
+document.getElementById("WelcomeMessage").innerHTML = 5 <= Jams && Jams <= 11 ? "صباح الخير" : 12 <= Jams && Jams <= 15 ? "مساء الخير" : 15 <= Jams && Jams <= 17 ? "مساء الخير" : 18 <= Jams && Jams <= 23 ? "مساء الخير" : "ليلة سعيدة للصباح";
+</script>
+</body>
+</html>

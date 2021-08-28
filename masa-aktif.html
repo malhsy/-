@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="windows-1256">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="Author" content="Ringroad">
+		<meta name="theme-color" content="#9831e0">
+		<meta name="msapplication-navbutton-color" content="#9831e0">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#9831e0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="icon" href="img/favicon.png">
+		<title>&nbsp;HOTSPOT</title>
+		<link rel="stylesheet" href="css/fontawesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/jquery.js"></script>
+<style>
+body{background-color: #2f353a;}
+.iframe-container{overflow:hidden;padding-top:100%;position:relative}
+.iframe-container iframe{border:0;height:150%;left:-10px;position:absolute;top:-150px;width:106%}
+</style>
+	</head>
+<body>
+<div class="app-container">
+<div class="page page-home page-with-subnavbar">
+<div class="page">
+	<div class="navbar navbar-page">
+		<div class="navbar-inner sliding">
+			<div class="left">
+				<a href="#" class="link back" onclick="javascript:history.go(-1);return false;">
+					<i class="fa fa-chevron-left"></i>
+				</a>
+			</div>
+			<div class="title">
+				فترة الامستخدم النشطة
+			</div>
+		</div>
+	</div>
+	<div class="page-content">
+		<!-- iFrame Status User -->
+<h3 id="user" class="margin-top-large text-center">$(username)</h3>
+<form name="statusUser" id="statusUser" action="" target="form-status" method="post">
+    <input type="hidden" name="nama" value="" />
+</form>
+<div class="iframe-container"><iframe id="UserStatus" name="form-status" scrolling="no"></iframe></div>
+		<!-- end iFrame Status User -->
+	</div>
+</div>
+
+</div>
+</div>
+<script type="text/javascript">
+var userId = document.getElementById('user').innerHTML;
+var url = "http://192.168.50.254"; // http://ip-server-mikhmon
+var SessionName = "WORKHOME"; // Ganti nama SessionName
+var actionLink = url+"/status/?session="+SessionName;
+document.getElementById('statusUser').action = actionLink;
+document.statusUser.nama.value = userId;
+document.getElementById('statusUser').submit()
+</script>
+<!-- end script -->
+</body>
+</html>

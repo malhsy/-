@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="windows-1256" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="Author" content="Ringroad" />
+ <meta name="theme-color" content="#9831e0" />
+ <meta name="msapplication-navbutton-color" content="#9831e0" />
+ <meta name="apple-mobile-web-app-status-bar-style" content="#9831e0" />
+ <meta name="apple-mobile-web-app-capable" content="yes" />
+ <link rel="icon" href="img/favicon.png" />
+ <title>اسعار البطاقات</title>
+ <link rel="stylesheet" href="css/fontawesome.min.css" />
+ <link rel="stylesheet" href="css/style.css" />
+ <script type="text/javascript" src="js/jquery.js"></script>
+<style>
+input[type=checkbox]{width:auto;padding:12px 20px;margin:8px 0;display:inline-block;border:1px solid #ccc;box-sizing:border-box;text-align:left}
+button{background-color:#4CAF50;color:#fff;padding:14px 20px;margin:8px 0;border:none;cursor:pointer;width:100%}
+.cancelbtn{padding:14px 20px;background-color:#f44336}
+.cancelbtn,.signupbtn{float:left;width:50%;border-radius:25px}
+@media screen and (max-width: 300px) {
+.cancelbtn,.signupbtn{width:100%}
+}
+</style>
+</head>
+
+<body>
+<div class="app-container">
+<div class="page page-home page-with-subnavbar">
+  <div class="toolbar tabbar tabbar-labels toolbar-bottom">
+   <div class="toolbar-inner">
+    <a href="login.html" class="tab-link">
+     <i class="fa fa-home"></i>
+     <p>الرئسية</p>
+    </a>
+    <a href="fitur.html" class="tab-link">
+     <i class="fa fa-list-alt"></i>
+     <p>نبذه</p>
+    </a>
+    <a href="paket.html" class="tab-link tab-link-active">
+     <i class="fa fa-list"></i>
+     <p>البطاقات</p>
+    </a>
+    <a href="aktivasi.html" class="tab-link">
+     <i class="fa fa-shield"></i>
+     <p>شرح التسجيل</p>
+    </a>
+    <a href="about.html" class="tab-link">
+     <i class="fa fa-user"></i>
+     <p>الاتصال</p>
+    </a>
+   </div>
+  </div>
+<div class="page">
+   <div class="navbar navbar-page">
+    <div class="navbar-inner sliding">
+     <div class="left"></div>
+     <div class="title text-center">
+      بطاقات الانترنت
+     </div>
+    </div>
+   </div>
+	<div class="page-content">
+		<div class="ticket margin-pages margin-bottom-big">
+			<div class="container">
+				<div class="background-white box-shadow border-radius padding-box-middle">
+					<div class="row">
+						<div class="col-70">
+							<div class="float-left">
+								<span class="icon-big icon-color-lime">
+									<i class="fa fa-rss"></i>
+								</span>
+							</div>
+							<div class="overflow-hidden">
+								<h6 class="font-small">  بطاقه( 36 )ساعة <br />
+								<i class="fa fa-bolt"></i> 2.5 Mbps  سرعة البطاقه <br />
+								<span class="color-primer"> <i class="fa fa-money"></i>شيكل ( 1 ) </span></h6>
+							</div>
+						</div>
+						<div class="col-30">
+							<button id="linkbuy1" class="buttons box-shadow" onclick="document.getElementById('').style.display='block'">Daftar</button>
+						</div>
+					</div>
+				</div>
+				<div class="separator-small"></div>
+				<div class="background-white box-shadow border-radius padding-box-middle">
+					<div class="row">
+						<div class="col-70">
+							<div class="float-left">
+								<span class="icon-big icon-color-teal">
+									<i class="fa fa-rss"></i>
+								</span>
+							</div>
+							<div class="overflow-hidden">
+								<h6 class="font-small">بطاقه ( 7 ) ايام   <br />
+								<i class="fa fa-bolt"></i> 2 Mbps سرعة البطاقة  <br />
+								<span class="color-primer"> <i class="fa fa-money"></i> (5) شيكل </span></h6>
+							</div>
+						</div>
+						<div class="col-30">
+							<button id="linkbuy2" class="buttons box-shadow" onclick="document.getElementById('').style.display='block'">Daftar</button>
+						</div>
+					</div>
+				</div>
+				<div class="separator-small"></div>
+				<div class="background-white box-shadow border-radius padding-box-middle">
+					<div class="row">
+						<div class="col-70">
+							<div class="float-left">
+								<span class="icon-big icon-color-yellow">
+									<i class="fa fa-rss"></i>
+								</span>
+							</div>
+							<div class="overflow-hidden">
+								<h6 class="font-small">بطاقة (30) يوم  <br />
+								<i class="fa fa-bolt"></i> 1 Mbps : سرعة البطاقة <br />
+								<span class="color-primer"> <i class="fa fa-money"></i> (15) الشيكل</span></h6>
+							</div>
+						</div>
+						<div class="col-30">
+							<button id="linkbuy3" class="buttons box-shadow" onclick="document.getElementById('').style.display='block'">Daftar</button>
+						</div>
+					</div>
+				</div>
+				<div class="separator"></div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+<div id="modal-signup" class="modal">
+  <form id="form-signup" class="modal-content animate" action="javascript:signup();">
+    <div class="modalcontainer">
+	<label><b>Nama</b></label>
+	  <input id="nama" class="form-control" type="text" placeholder="nama" pattern="[A-z\s]{3,20}" required title="minim 3 karakter yg diperbolehkan a-z A-Z">
+	  <label><b>Alamat</b></label>
+	  <input id="alamat" class="form-control" type="text" placeholder="alamat" required>
+	  <label><b>No HP</b></label>
+      <input id="nomor" class="form-control" type="text" placeholder="no. hp" pattern="[0-9-]+" required title="karakter yg diperbolehkan 0-9">
+	  <label><b>Mac Address</b></label>
+	  <input id="mac" class="form-control" type="text" value="$(mac)" readonly="readonly">
+	<div class="form-group">
+	<label><b>Pilih Paket</b></label>
+	<select id="paket" class="form-control" required>
+		<option value="" selected>- pilih paket -</option>
+		<option value="3Mbps - Rp 100.000">3Mbps - Rp 100.000</option>
+		<option value="5Mbps - Rp 150.000">5Mbps - Rp 150.000</option>
+		<option value="10Mbps - Rp 250.000">10Mbps - Rp 250.000</option>
+	</select>
+	</div>
+	<label><b>Username</b></label>
+	<input id="username" class="form-control" type="text" placeholder="username" pattern="[A-z0-9]{4,20}" required title="minimal 4 karakter yg diperbolehkan a-z A-Z 0-9 tanpa spasi">
+	<label><b>Password</b></label>
+	  <input id="password1" class="form-control" type="password" placeholder="password" autocomplete="off" pattern=".{3,}" required title="minimal 3 karakter">
+	<label><b>Repeat Password</b></label>
+	<div class="form-group">
+    <div id="validate-status"></div>
+	<input id="password2" class="form-control" type="password" placeholder="ulangi password" autocomplete="off" pattern=".{3,}" required title="minimal 3 karakter">
+	</div> 
+      <input type="checkbox" required> Saya setuju dengan syarat &amp; ketentuan <b><i>RingRoad Network</i></b>
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('modal-signup').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div id="confirm" class="modal fade" role="dialog" data-backdrop="static">
+
+<div class="modal-content">
+<div class="background-white padding-box border-radius box-shadow text-center">
+	<h6 class="margin-bottom-small">Permintaan Anda berhasil terkirim, silahkan tunggu konfirmasi dari kami via Whatsapp.</h6>
+	<div class="separator-small"></div>
+	<button class="buttons buttons-full margin-top-small box-shadow" onclick="document.getElementById('confirm').style.display='none'">Oke</button>
+</div>
+</div>
+</div>
+
+<script src="js/signup.js"></script>
+<script type="text/javascript">
+var modal = document.getElementById('modal-signup');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>
